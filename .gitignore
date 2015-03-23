@@ -5,8 +5,6 @@ sfotipy
 .npm-debug.log
 tmp
 
-
-bower.json
 component.json
 bower_components
 
