@@ -1,10 +1,9 @@
-sfotipy
-sfotipy/
 /sfotipy
+sfotipy/
+sfotipy
 
 .npm-debug.log
 tmp
-
 
 component.json
 bower_components

@@ -1,13 +1,20 @@
 {
   "name": "mimotipy",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "authors": [
-    "miktown <mcacho@mimotic.com>"
+    "mrebordinos <monica.rebordinos@edoctores.com>"
   ],
-  "description": "copia fraudulenta de spotify",
+  "description": "version de sfotipy",
   "main": "mimotipy/index.html",
   "license": "MIT",
-  "homepage": "mimotic.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "mimotipy.com",
   "dependencies": {
     "normalize.styl": "~3.0.2"
   }

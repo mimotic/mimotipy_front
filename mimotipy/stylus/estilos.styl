@@ -1,0 +1,232 @@
+@import "../../bower_components/normalize.styl/normalize.styl"
+@import "fonts.styl"
+
+mimotipy_color = #669999
+gris_oscuro = #333333
+gris_claro =  #818181
+rojo = #BD255B
+gris_mas_claro = #F0F0F0
+
+body
+	margin 0
+	font-family 'Varela', sans-serif
+	font-size 16px
+
+h1
+	color mimotipy_color
+
+figure
+	margin 0
+
+a
+	text-decoration none
+
+img
+	vertical-align top
+ul
+	margin 0
+	padding 0
+
+.relative
+	position relative
+.border-bottom
+	border-bottom 1px solid gris_claro
+.center-block
+	margin 0 auto
+.center-text
+	text-align center
+.right-text
+	text-align right
+.padding
+	padding 1em
+.padding-tb
+	padding 1em 0
+.left
+	float left
+.right
+	float right
+.wrap
+	width 1000px
+.round
+	border-radius 50%
+	overflow hidden
+.pointer
+	cursor pointer
+
+
+
+
+.progress
+	margin 1em 0
+	position relative
+	.min
+	.max
+		font-size .8em
+		position absolute
+		top -5px
+	.min
+		left 0
+	.max
+		right 0
+	.total
+		border-radius 5px
+		height 5px
+		background gris_claro
+		width 75%
+		margin 0 auto
+	.state
+		border-radius 5px
+		height 5px
+		background rojo
+		width 30%
+		position relative
+	.circle
+		width 10px
+		height 10px
+		background gris_oscuro
+		border-radius 50%
+		position absolute
+		right 0
+		top -2px
+
+
+.menu
+	display none
+
+.header
+	height 3.5em
+	// a
+	// 	display none
+	.title
+		font-size 1.1em
+		text-align center
+		margin 0
+		line-height 3.5em
+.button-menu
+	color gris_oscuro
+	position absolute
+	top 50%
+	margin-top -10px
+	left .5em
+
+.container
+	padding 1.4rem
+	font-size 0
+	text-align: center
+.name
+	color gris_oscuro
+.author
+	color gris_claro
+.song
+	width 8rem
+	display inline-block
+	font-size 1rem
+	margin-right 1em
+	margin-bottom 1em
+	text-align left
+	&:nth-child(even)
+		margin-right: 0
+
+	p
+		margin .5em 0
+
+.playing
+	&.small
+		width 20em
+
+.action
+	color white
+	font-size 1.2em
+	margin-right .5em
+	&:last-child
+		margin-right 0
+	&.gray
+		color gris_claro
+.actions
+	position absolute
+	bottom 0
+	left 0
+	right 0
+	background rgba(black,.3)
+
+.input
+	border 1px solid gris_claro
+	height 2.5em
+	border-radius 5px
+	padding 0 1em 0 2em
+.search-icon
+	position absolute
+	left .5em
+	top .8em
+	color gris_claro
+.close-icon
+	position absolute
+	top .5em
+	right .5em
+	font-sizen 1.2em
+	color gris_claro
+
+@media screen and (min-width:480px)
+	.song
+		&:nth-child(even)
+			margin-right 1em
+	.image
+		img
+			width 100%
+			height auto
+	.playing
+		&.medium
+			width auto
+
+
+@media screen and (min-width:1000px)
+	body
+		background gris_mas_claro
+	.button-menu
+		display none
+	.menu
+		display block
+		background gris_mas_claro
+		overflow hidden
+		.item
+			float left
+			list-style none
+			a
+				color gris_oscuro
+				text-transform uppercase
+				cursor pointer
+				padding 1em
+				display block
+				border-top 5px solid transparent
+				&:hover
+					border-top 5px solid gris_claro
+	.header
+		height auto
+		.title
+			display none
+	.isotipo
+		width 122px
+	.logo
+		padding 1.3em 0
+		overflow hidden
+		background white
+	.avatar
+		width 38px
+		height 38px
+	.username
+		color gris_claro
+		position relative
+		margin-left .5em
+		top 9px
+		&:after
+			content ""
+			display inline-block
+			border-top 10px solid gris_claro
+			border-left 7px solid transparent
+			border-right 7px solid transparent
+			margin-left .4em
+
+
+
+
+

@@ -1,14 +1,14 @@
 {
-  "name": "sfotipy",
+  "name": "mimotipy",
   "version": "1.0.0",
-  "description": "probando grunt en el proyecto de platzi",
+  "description": "proyecto mimotipy",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mimotic/platzi-desarrollo-web.git"
+    "url": "https://github.com/mimotic/platzi-frontend-sfotipy.git"
   },
   "keywords": [
     "grunt",
@@ -18,9 +18,9 @@
   "author": "Mi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mimotic/platzi-desarrollo-web/issues"
+    "url": "https://github.com/mimotic/platzi-frontend-sfotipy/issues"
   },
-  "homepage": "https://github.com/mimotic/platzi-desarrollo-web",
+  "homepage": "https://github.com/mimotic/platzi-frontend-sfotipy",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "^0.9.0",

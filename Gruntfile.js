@@ -7,7 +7,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-jshint'); // validator js files
 	grunt.loadNpmTasks('grunt-contrib-cssmin'); // minificar los css
 	grunt.loadNpmTasks('grunt-contrib-uglify'); // minificar js
-	grunt.loadNpmTasks('grunt-contrib-stylus'); // stylus precompilador CSS !!!
+	grunt.loadNpmTasks('grunt-contrib-stylus'); // stylus
 
 	// config modules
 	grunt.config.init({
@@ -21,38 +21,38 @@ module.exports = function(grunt){
 			        port:8080,
 	                livereload: true,
 	                open: true,
-	                base: './mimotipy/',
+	                base: 'mimotipy',
 		    	}
 			},
 
-			serverSpotipy: {
+			serverSfotipy: {
 
 		     	options: {
 			        hostname: 'www',
-			        port:8081,
+			        port:8080,
 	                livereload: true,
 	                open: true,
-	                base: './sfotipy/',
+	                base: 'sfotipy',
 		    	}
 			}
 		},
 
 		watch: { // observa cambios sobre archivos
 
-			sfotipi:{
-			   	files: ['sfotipy/**/*'],
-				options:{
-					livereload: true
-				}
-			},
-
-			mimotipi:{
-			   	files: ['mimotipy/**/*','!mimotipy/css/**/*'],
+			scriptsMimotipy: {
+			   	files: ['mimotipy/**/*', '!mimotipy/css/*'],
 			   	tasks: ['stylus'],
-				options:{
-					livereload: true
-				}
-			}
+			   	options: {
+			        livereload: true,
+			    },
+
+			},
+			scriptsSfotipy: {
+			   	files: ['sfotipy/**/*'],
+				options: {
+			        livereload: true,
+			    },
+			},
 
 		},
 
@@ -85,25 +85,26 @@ module.exports = function(grunt){
 	      }
 	    },
 
+
 	    stylus: {
 		  compile: {
 		    options: {
-		      paths: ['mimotipy/stylus']
+		      paths: ['mimotipy/stylus'],
 		    },
 		    files: {
-		      'mimotipy/css/style.css': ['mimotipy/stylus/style.styl'] // 1:1 compile an concat if has more than 1
+		      'mimotipy/css/style.css': ['mimotipy/stylus/estilos.styl']
 		    }
-		 }
-}
+		  }
+		}
 
 	});
 
 	// tareas
-	grunt.task.registerTask('default', ['stylus','connect:serverMimotipy','watch:mimotipi']);
+	grunt.registerTask('default',['stylus','connect:serverMimotipy','watch:scriptsMimotipy']);
 
-
-	grunt.task.registerTask('spy', ['connect:serverSpotipy','watch:sfotipi']);
-	grunt.task.registerTask('outcss', ['stylus']);
+	grunt.task.registerTask('mpy', ['stylus','connect:serverMimotipy','watch:scriptsMimotipy']);
+	grunt.task.registerTask('spy', ['connect:serverSfotipy','watch:scriptsSfotipy']);
+	grunt.task.registerTask('genstylus', ['stylus']);
 
 
 };
