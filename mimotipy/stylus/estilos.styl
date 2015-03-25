@@ -1,5 +1,15 @@
+@import "nib"
 @import "../../bower_components/normalize.styl/normalize.styl"
 @import "fonts.styl"
+
+vendor-prefixes = webkit o ms moz official
+
+// animacion(param)
+// 	-webkit-animation param
+// 	-moz-animation param
+// 	-o-animation param
+// 	-ms-animation param
+// 	animation param
 
 mimotipy_color = #669999
 gris_oscuro = #333333
@@ -80,6 +90,7 @@ ul
 		background rojo
 		width 30%
 		position relative
+		animation 250s state infinite linear
 	.circle
 		width 10px
 		height 10px
@@ -88,7 +99,21 @@ ul
 		position absolute
 		right 0
 		top -2px
+		animation 10s circle infinite
 
+@keyframes state
+	0%
+		width 0
+	100%
+		width 100%
+
+
+@keyframes circle
+	0%
+		transform scale(1)
+	100%
+		transform scale(1.2)
+		opacity .8
 
 .menu
 	display none
@@ -133,6 +158,7 @@ ul
 .playing
 	&.small
 		width 20em
+		margin 0 auto
 
 .action
 	color white
@@ -165,6 +191,40 @@ ul
 	right .5em
 	font-sizen 1.2em
 	color gris_claro
+.playlist
+	width 22em
+	padding 0 2em
+	border-left 1px solid gris_claro
+	display none
+	.list
+		list-style none
+	.item
+		padding 1em 0
+	.action
+		font-size .8em
+.isotipo
+	width 122px
+.logo
+	padding 1.3em 0
+	overflow hidden
+	background white
+	display none
+.avatar
+	width 38px
+	height 38px
+.username
+	color gris_claro
+	position relative
+	margin-left .5em
+	top 9px
+	&:after
+		content ""
+		display inline-block
+		border-top 10px solid gris_claro
+		border-left 7px solid transparent
+		border-right 7px solid transparent
+		margin-left .4em
+
 
 @media screen and (min-width:480px)
 	.song
@@ -184,10 +244,17 @@ ul
 		background gris_mas_claro
 	.button-menu
 		display none
+	.playing
+		padding-top 1.3em
+		&.large
+			margin 0 auto
+			width 62.5em
+			overflow hidden
 	.menu
 		display block
 		background gris_mas_claro
 		overflow hidden
+		border-top 1px solid gris_claro
 		.item
 			float left
 			list-style none
@@ -200,31 +267,21 @@ ul
 				border-top 5px solid transparent
 				&:hover
 					border-top 5px solid gris_claro
+	.music
+		width 32.5em
+		float left
+		.description
+			display none
 	.header
 		height auto
+		border none
 		.title
 			display none
-	.isotipo
-		width 122px
+	.playlist
 	.logo
-		padding 1.3em 0
-		overflow hidden
-		background white
-	.avatar
-		width 38px
-		height 38px
-	.username
-		color gris_claro
-		position relative
-		margin-left .5em
-		top 9px
-		&:after
-			content ""
-			display inline-block
-			border-top 10px solid gris_claro
-			border-left 7px solid transparent
-			border-right 7px solid transparent
-			margin-left .4em
+		display block
+
+
 
 
 
